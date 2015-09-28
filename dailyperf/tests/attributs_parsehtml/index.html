@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="withoutAttributs">Without attributs</button>
+<button id="withAttributs">With attributs</button>
+
+<div class="container">
+
+</div>
+
+<script>
+    function generate(count, withAttributs) {
+        console.timeStamp('With attributs: ' + withAttributs);
+        for (var i = 0; i < count; i++) {
+            var el = document.createElement('div');
+            if (withAttributs) {
+                el.setAttribute('data-attr0', i);
+                el.setAttribute('data-attr1', i);
+                el.setAttribute('data-attr2', i);
+                el.setAttribute('data-attr3', i);
+                el.setAttribute('data-attr4', i);
+            }
+            containerEl.appendChild(el);
+        }
+    }
+</script>
+<script>
+    var containerEl = document.querySelector('.container');
+
+    withoutAttributs.onclick = function () {
+        generate(10000, false);
+    }
+
+    withAttributs.onclick = function () {
+        generate(10000, true);
+    }
+</script>
+</body>
+</html>
