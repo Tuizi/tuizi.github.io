@@ -12,31 +12,55 @@
 
 </div>
 
+<table>
+    <caption>ParseHTML For 1000 items</caption>
+    <tr>
+        <th>Browser</th>
+        <th>Without attributs</th>
+        <th>With attributs</th>
+    </tr>
+    <tr>
+        <td>IE 11</td>
+        <td>3.57 ms</td>
+        <td>6.06 ms</td>
+    </tr>
+    <tr>
+        <td>Chrome</td>
+        <td>1 ms</td>
+        <td>5.4 ms</td>
+    </tr>
+</table>
+
 <script>
     function generate(count, withAttributs) {
         console.timeStamp('With attributs: ' + withAttributs);
+
+        var html = '';
         for (var i = 0; i < count; i++) {
-            var el = document.createElement('div');
+            var divHtml = '<div class="content" '
             if (withAttributs) {
-                el.setAttribute('data-attr0', i);
-                el.setAttribute('data-attr1', i);
-                el.setAttribute('data-attr2', i);
-                el.setAttribute('data-attr3', i);
-                el.setAttribute('data-attr4', i);
+                divHtml += 'data-attr0="' + i + '"';
+                divHtml += 'data-attr1="' + i + '"';
+                divHtml += 'data-attr2="' + i + '"';
+                divHtml += 'data-attr3="' + i + '"';
+                divHtml += 'data-attr4="' + i + '"';
             }
-            containerEl.appendChild(el);
+
+            divHtml += "></div>";
+            html += divHtml;
         }
+        containerEl.innerHTML = html;
     }
 </script>
 <script>
     var containerEl = document.querySelector('.container');
 
     withoutAttributs.onclick = function () {
-        generate(10000, false);
+        generate(1000, false);
     }
 
     withAttributs.onclick = function () {
-        generate(10000, true);
+        generate(1000, true);
     }
 </script>
 </body>
