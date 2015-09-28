@@ -1,0 +1,23 @@
+{
+  "name": "tuizi.io",
+  "version": "1.0.0",
+  "description": "Tuizi.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tuizi/tuizi.github.io.git"
+  },
+  "author": "Fabien Rogeret",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tuizi/tuizi.github.io/issues"
+  },
+  "homepage": "https://github.com/Tuizi/tuizi.github.io",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  }
+}
