@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Does HTML attributs impact performance ?",
+    "impact": 1,
+    "url": "attributs_parsehtml",
+    "summary": "Sometimes we have to add some attributs in our HTML to satisfy tests automation and accessibility needs, but does all these attributs impact the performance ?"
+  }
+]
