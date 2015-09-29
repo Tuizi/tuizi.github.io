@@ -37,7 +37,7 @@
 
         var html = '';
         for (var i = 0; i < count; i++) {
-            var divHtml = '<div class="content" '
+            var divHtml = '<div class="content" ';
             if (withAttributs) {
                 divHtml += 'data-attr0="' + i + '"';
                 divHtml += 'data-attr1="' + i + '"';
@@ -57,7 +57,7 @@
 
     withoutAttributs.onclick = function () {
         generate(1000, false);
-    }
+    };
 
     withAttributs.onclick = function () {
         generate(1000, true);

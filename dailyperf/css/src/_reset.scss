@@ -1,0 +1,20 @@
+@import "variables";
+
+body {
+  background: $white;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  border-bottom: 1px solid lighten($bg-color, 20%);
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+header {
+  font-family: 'Pacifico', cursive;
+  color: $accent-color;
+}
