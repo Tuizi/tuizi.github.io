@@ -27,6 +27,7 @@
 - aria-label replace title or text
 - aria-describe complete title or text
 
+
 		<span>Toto</span> //SR will say: Toto
 	    <span aria-label="tutu">Toto</span> //SR will say: tutu
 	    <span aria-describe="My name is">Toto</span> //SR will say: Toto. My name is. 
