@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<h1>Load component on demand</h1>
+<h2>The CSS file</h2>
+<p>
+    Css file insertion is not really affecting the performance, when inserting a new stylesheet the browser
+    is smart enought to recalculate style only for affected elements, not the entire page is recalculated.
+</p>
+
+<div class="container">
 <div class="style1">
     <div class="content"></div>
     <div class="content"></div>
@@ -410,6 +419,16 @@
     <div class="content"></div>
     <div class="content"></div>
 </div>
+</div>
+
+<div class="toolbar">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+
 <script>
     setTimeout(function () {
         console.timeStamp('insert');

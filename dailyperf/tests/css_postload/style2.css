@@ -1,3 +1,8 @@
 .style2 .content {
     background: tomato;
 }
+
+/*this body rule will force to recalculate style for all element (parent changes affect children)*/
+.container {
+    margin: 0;
+}
