@@ -27,11 +27,10 @@
 - aria-label replace title or text
 - aria-describe complete title or text
 
-
-    <span>Toto</span> //SR says: Toto
-    <span aria-label="tutu">Toto</span> //SR says: tutu
-    <span aria-describe="My name is">Toto</span> //SR says: Toto. My name is. 
-
+		<span>Toto</span> //SR will say: Toto
+	    <span aria-label="tutu">Toto</span> //SR will say: tutu
+	    <span aria-describe="My name is">Toto</span> //SR will say: Toto. My name is. 
+    
 ### Use cases
 
 * Fitlering a list, aria-live will automatically read the change to this list (will say automatically: "2 items: blabla, 3 items blabla")
@@ -40,7 +39,7 @@
 ## :focus
 
 - Information show on :hover should be also displayed on :focus _1 line of CSS code and you are accessible_
-- **NEVER DO THAT** in CSS: ```:focus { outline:none; }```
+- **NEVER DO** in CSS: ```:focus { outline:none; }```
 
 ## Table
 
@@ -90,13 +89,13 @@ Use aria-describedby on your input to complete the title
     <input type="text" aria-describedby="searchResult" title="Your name" placeholder="Your name"></input>
     <span id="searchResult">Name not found</span>
     
-**SR says:** "Your name _value_. Name not found. input text" 
+**SR will say:** "Your name _value_. Name not found. input text" 
 
 ### Burger menu
 
 - Use ```aria-expanded``` on burger menu button
 - Use ```title="Menu"``` on the burger menu button
-- Sub menu code must be next to the menu button code, not at the end of the page
+- Sub menu code **must** be next to the menu button code, not at the end of the page
 
 ### Modal window
 
