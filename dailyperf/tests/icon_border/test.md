@@ -12,20 +12,22 @@ With icon:
         <span>Event 1</span>
         <span class="sr-only">Has comments</span>
     </div>
-    
+
+Chrome 
+
 | Element | Render time  |
 | ------- | ------------ |
-| Border  |     80 ms    |
-|   Icon  |    100 ms    |
+| Border  |     48 ms    |
+|   Icon  |     60 ms    |
 
 Icon:
 
-Loading: 8ms
-Rendering: 55ms
+Loading: 4.5ms
+Rendering: 45ms
 Painting: 8ms
 
 Border:
 
-Loading: 8ms
-Renderig: 40ms
+Loading: 2.6ms
+Rendering: 35.5ms
 Painting: 8ms
