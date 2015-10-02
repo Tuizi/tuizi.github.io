@@ -17,8 +17,14 @@ Chrome
 
 | Element | Render time  |
 | ------- | ------------ |
-| Border  |     48 ms    |
-|   Icon  |     60 ms    |
+| Border  |     <50 ms    |
+|   Icon  |     <70 ms    |
+
+Border:
+
+Loading: 2.6ms
+Rendering: 35.5ms
+Painting: 8ms
 
 Icon:
 
@@ -26,11 +32,24 @@ Loading: 4.5ms
 Rendering: 45ms
 Painting: 8ms
 
+IE 11
+
+| Element | Render time  |
+| ------- | ------------ |
+| Border  |     <130 ms  |
+|   Icon  |     <170 ms  |
+
 Border:
 
-Loading: 2.6ms
-Rendering: 35.5ms
-Painting: 8ms
+Timer: <20ms
+Layout: <75ms
+Paint <35ms
+
+Icon:
+
+Timer: <25ms
+Layout: <110ms
+Paint <35ms
 
 Chrome Mobile
 
@@ -50,6 +69,3 @@ Icon:
 Loading: <200ms
 Rendering: <550ms
 Painting: <80ms
-
-
-
