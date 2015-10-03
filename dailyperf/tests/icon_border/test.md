@@ -1,17 +1,21 @@
 With border:
 
-    <div class="event has-comment">
-        <span>Event 1</span>
-        <span class="sr-only">Has comments</span>
-    </div>
+``` HTML
+<div class="event has-comment">
+    <span>Event 1</span>
+    <span class="sr-only">Has comments</span>
+</div>
+```
     
 With icon:
 
+``` HTML
     <div class="event has-comment">
         <i aria-hidden="true"></i>
         <span>Event 1</span>
         <span class="sr-only">Has comments</span>
     </div>
+```
 
 Chrome 
 
@@ -56,7 +60,7 @@ Chrome Mobile
 | Element | Render time  |
 | ------- | ------------ |
 | Border  |     <800 ms  |
-|   Icon  |     <950 ms  |
+|   Icon  |    <1000 ms  |
 
 Border:
 
@@ -66,6 +70,6 @@ Painting: <60ms
 
 Icon:
 
-Loading: <200ms
-Rendering: <550ms
+Loading: <210ms
+Rendering: <600ms
 Painting: <80ms
