@@ -7,56 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="comment">
-    <button tabindex="0" class="comment-button">Explaination</button>
-    <aside class="comment-text">
-        <table>
-            <caption>For 700 events</caption>
-            <tr>
-                <th>Style</th>
-                <th>Recalculate style</th>
-                <th>Layout</th>
-                <th>Update tree</th>
-                <th>Paint</th>
-            </tr>
-            <tr>
-                <td>Border</td>
-                <td><5ms</td>
-                <td><5ms</td>
-                <td><5ms</td>
-                <td><5ms</td>
-            </tr>
-
-            <tr>
-                <td>Icons</td>
-                <td><10ms</td>
-                <td><10ms</td>
-                <td><5ms</td>
-                <td><10ms</td>
-            </tr>
-
-            <tr>
-                <td>a11y</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <p>
-            So between using a border or using an icon to render an information there is not perseptible impact on
-            performance for the user.
-
-            The performance impact is more precisly in font used for the icons, if you need to download one only to
-            display these icons so border will be better, but most of the time a webfont is already there to display
-            all icons in your page, in this case border or icons have the same impact on rendering.
-
-            Keep in mind, often we add a i tag to add these icon instead of using a ::before, this will increase the
-            parseHTML time.
-        </p>
-        <hr>
-    </aside>
-</div>
 
 <header>
     <button class="filter">1</button>
@@ -105,7 +55,7 @@
     };
 
     var grid = new Grid('#grid', {
-        icon: true
+        icon: false
     });
 
     setTimeout(function () {
