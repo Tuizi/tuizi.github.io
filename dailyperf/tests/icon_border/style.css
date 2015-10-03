@@ -32,21 +32,6 @@ main {
     overflow: auto;
 }
 
-.comment {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-}
-
-.comment .comment-text {
-    display: none;
-}
-
-.comment:focus .comment-text {
-    display: block;
-}
-
 .sr-only {
     position: absolute;
     left: -9999px;

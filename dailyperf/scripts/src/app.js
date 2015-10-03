@@ -1,14 +1,12 @@
+import CardLoader from 'card-loader';
+
 class App {
-    constructor(url) {
-        this.url = url;
+    constructor(testsUrl) {
+        this.cardLoader = new CardLoader(testsUrl);
     }
 
     init() {
-        fetch(this.url).then((response)=> {
-            response.json().then((json => {
-                console.log(json);
-            }));
-        });
+
     }
 }
 
