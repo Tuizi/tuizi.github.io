@@ -2,15 +2,16 @@
 
 ![Border VS Icons](img.png)
 
-*Between a border and an icon, which one impacts performance the most?*
+*When you have to choose between 2 visuals: border color or an icon, which one impacts performance the most?*
 
-**tl;dr** No significant impact on performance for any. But a border is better than an icon.
+**tl;dr** Yes there is a minor impact on the rendering time. Using a border color will be faster than an icon.
 
 [RAIL](https://developers.google.com/web/tools/profile-performance/evaluate-performance/rail) performance impact:
 
-|  R    |	 A  | 	I  | 	L  |
-|-------|-------|------|-------|
-|  N    |  Y    |  N   |   N   |
+R: No impact on responsive time
+A: Minor impact if you render elements during an animation
+I: N/A
+L: No impact on the load time (we exclude the impact of loading the webfont)
 
 ## The Question
 
@@ -24,7 +25,7 @@ The event type could be defined with:
 
 There's only a little performance difference between the two options. Border is faster than icon by 20ms in average.
 Following the [RAIL performance model](https://developers.google.com/web/tools/profile-performance/evaluate-performance/rail#animation-render-frames-every-16ms) we have a budget of 16 ms for animation.
-In our case, dynamically generate these events during an animation or a user input (e.g. scroll) would already use up our all the budget for a fluid animation (16ms).
+In our case, dynamically generate these events during an animation or a user input (e.g. scroll) would already use up all our budget for a fluid animation (16ms).
 
 # The test
 
