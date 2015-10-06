@@ -1,0 +1,23 @@
+{
+  "name": "dailyperf",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Tuizi/tuizi.github.io/dailyperf",
+  "authors": [
+    "Fabien Rogeret <fabien.rogeret@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~3.10.1",
+    "doT": "https://github.com/olado/doT.git"
+  }
+}
