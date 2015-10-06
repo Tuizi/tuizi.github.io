@@ -10,7 +10,7 @@ _Between border and icon, witch one impact the most the performance?_
 
 |  R    |	 A  | 	I  | 	L  |
 |-------|-------|------|-------|
-|  N    |  N    |  Y   |   N   |
+|  N    |  Y    |  N   |   N   |
 
 ## The Question
 Today we got a good visual question, we have to choose between two designs to render events in a grid.
