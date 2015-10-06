@@ -10,5 +10,11 @@
     "impact": 1,
     "url": "css_postload",
     "summary": "Today we got a good discussion about post-loading of component. We have to load components on demand, but what is the impact?"
+  },
+  {
+    "title": "Icon vs Border",
+    "impact": 1,
+    "url": "icon_border",
+    "summary": "How a visual choice can affect performance?"
   }
 ]

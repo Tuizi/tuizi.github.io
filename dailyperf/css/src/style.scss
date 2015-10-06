@@ -1,28 +1,32 @@
 @import "variables";
-
 @import "reset";
+
+#header, #card-container {
+  padding: 0 $content-margin;
+}
 
 #header {
   background: $bg-color;
+  font-family: 'Pacifico', cursive;
   height: $header-height;
-  text-align: center;
-  color: $white;
+  color: $white-color;
 }
 
 #card-container {
-  max-width: 75%;
-  margin: 0 auto;
-  position: absolute;
-  top: $header-height - 2em;
-  left: 0;
-  right: 0;
+  display: flex;
+}
 
-  .card {
-    font-family: 'Noto Sans', sans-serif;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background: $white;
-    box-shadow: 1px 0 5px 0 rgba(50, 50, 50, 0.75);
-    padding: 15px 30px 25px 30px;
-  }
+.card {
+  width: $card-size;
+  height: $card-size;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  box-shadow: 1px 0 5px 0 rgba(50, 50, 50, 0.75);
+
+  padding: 15px;
+  margin: 15px;
+
+  box-sizing: border-box;
 }
