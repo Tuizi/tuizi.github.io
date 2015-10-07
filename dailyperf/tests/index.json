@@ -1,20 +1,33 @@
 [
   {
-    "title": "Does HTML attributs impact performance ?",
+    "title": "Icon vs Border",
     "impact": 1,
-    "url": "attributs_parsehtml",
-    "summary": "Sometimes we have to add some attributs in our HTML to satisfy tests automation and accessibility needs, but does all these attributs impact the performance ?"
-  },
-  {
-    "title": "Does post loading CSS affect performance ?",
-    "impact": 1,
-    "url": "css_postload",
-    "summary": "Today we got a good discussion about post-loading of component. We have to load components on demand, but what is the impact?"
+    "url": "icon-vs-border",
+    "summary": "How a visual choice can affect performance ?"
   },
   {
     "title": "Icon vs Border",
     "impact": 1,
-    "url": "icon_border",
-    "summary": "How a visual choice can affect performance?"
+    "url": "icon-vs-border",
+    "summary": "How a visual choice can affect performance ?"
+  },
+  {
+    "title": "Icon vs Border",
+    "impact": 1,
+    "url": "icon-vs-border",
+    "summary": "How a visual choice can affect performance ?"
+  },
+  {
+    "title": "Icon vs Border",
+    "impact": 1,
+    "url": "icon-vs-border",
+    "summary": "How a visual choice can affect performance ?"
+  },
+  {
+    "title": "Icon vs Border",
+    "impact": 1,
+    "url": "icon-vs-border",
+    "summary": "How a visual choice can affect performance ?"
   }
+
 ]
