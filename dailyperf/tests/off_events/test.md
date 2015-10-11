@@ -6,8 +6,8 @@ _DOM Events are not always cleaned up, what the impact on performance?_
 
 [RAIL](https://developers.google.com/web/tools/profile-performance/evaluate-performance/rail) performance impact:
 
-R: Huge, the application will become more and more slower.
-A: Minor, but as the application will becore more and more slower, the browser will not be able to render fluid animation.
+R: Major, the application will become more and more slower.
+A: Minor, but as the application will become more and more slower, the browser will not be able to render fluid animation.
 I: N/A
 L: No impact on the load time.
 
@@ -16,10 +16,8 @@ L: No impact on the load time.
 Today, when reading some code, I notice a lot of this kind of code:
  
 ``` javascript
-
 $(document.body).on('click', function() { /*...*/ });
 $(document).on('resize', function() { /*...*/ });
-
 ```
 The worse case I have read was a function called multiple time, and each time binding a click on the body. Using this magic snippet:
 
@@ -38,13 +36,13 @@ So what is really happening when we forgot to clean after us when coding, and th
 
 ## The answer
 
-I will answer by a code example, using this code:
+I will answer by a code example:
 
 ``` javascript
 var $btn;
 
 var TimeSheet = function () {
-    var hugeArrayOfBigObject = [2];
+    var hugeArrayOfBigObject = [2]; //imagine a big fat data array...
 
     this.submit = function () {
         console.log('submit', hugeArrayOfBigObject)
@@ -68,7 +66,7 @@ $(document).ready(function () {
 
     // a lot of code...
     // ...
-    // then I don't need a timesheet instance anymore...
+    // then I don't need the timesheet instance anymore...
     timesheet = undefined;
 })
 ```
@@ -78,3 +76,10 @@ With this ```timesheet = undefined```, what do you think it will happen when:
 - You click on the button #submit ?
 - You resize the window ?
 
+Both method will still continue to be executable, resizing the window will log "_resize_" and the click on the button will still log "_submit, [2]_".
+Ok so you probably guessed that well, but what should freak you up the most it's this "_submit, [2]_", why?
+
+Because you explicitly destroyed the timesheet, and this big fat array is **still in memory!**
+
+So always, always remove references on your objects, without that, the browser is unable to free the memory. We always forgot this .off()/removeEventListener() call.
+And keep in mind, when you bind an event to a method: ```$btn.on('click', timesheet.submit);```, doing that a second time, will not replace the currently method binded to 'click', the method will be called twice!
