@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<button id="submit">Submit</button>
+<script>
+    var $btn;
+
+    var TimeSheet = function () {
+        var hugeArrayOfBigObject = [2];
+
+        this.submit = function () {
+            console.log('submit', hugeArrayOfBigObject)
+        };
+
+        this.resize = function () {
+            console.log('resize');
+        };
+
+        $(window).on('resize', this.resize);
+
+        return this;
+    };
+
+    $(document).ready(function () {
+        $btn = $('#submit');
+
+        var timesheet = new TimeSheet();
+
+        $btn.on('click', timesheet.submit);
+
+        // a lot of code...
+        // ...
+        // then I don't need a timesheet instance anymore...
+        timesheet = undefined;
+    })
+</script>
+</body>
+</html>
