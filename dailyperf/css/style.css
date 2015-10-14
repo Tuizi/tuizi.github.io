@@ -1,1 +1,1 @@
-ul{list-style:none;padding:0}h1{margin:0}#card-container{display:flex}.card{border:1px solid black;width:200px;height:200px;position:relative;margin:1px;transition:transform 200ms}.card:hover{transform:scale(1.1)}
+ul{list-style:none;padding:0}h1{margin:0}body{font-family:'Source Sans Pro', sans-serif}#card-container{display:flex;flex-wrap:wrap}.card{border:1px solid black;width:150px;height:150px;position:relative;margin:1px}
