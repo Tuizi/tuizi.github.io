@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body {
+            font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif
+        }
+
+        .error {
+            color: darkred;
+        }
+
+        .success {
+            background: lightgreen;
+        }
+
+        p {
+            color: darkgrey;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-aria.js"></script>
+</head>
+<body ng-app="a11y">
+
+<header>
+    <h1>Accessibility example</h1>
+</header>
+<section ng-controller="FieldErrorController as fieldErrCtrl">
+    <h2>Field error</h2>
+
+    <p>
+        role-alert: Automatically say when there is new content inside (ng-if changes) <br>
+        aria-live: On ul will automatically say the list of users when the content change (ng-repeat change)
+    </p>
+    <label for="field">
+        Search an user: <input type="text" id="field" ng-model="fieldErrCtrl.text" ng-change="fieldErrCtrl.check()"
+                               autocomplete="off">
+    </label>
+
+    <div role="alert" class="error">
+        <span ng-if="fieldErrCtrl.isNotFound">User not found.</span>
+        <span ng-if="fieldErrCtrl.isIncorrect">Enter more character.</span>
+        <span ng-if="fieldErrCtrl.users">{{fieldErrCtrl.users.length}} users found.</span>
+    </div>
+
+    <ul id="result" aria-live="polite">
+        <li ng-repeat="user in fieldErrCtrl.users">
+            <span>{{::user}}</span>
+        </li>
+    </ul>
+</section>
+
+<section ng-controller="NotificationController">
+    <h2>Notification</h2>
+
+    <p>Automatically say the phrase in the span when it changes, assertive</p>
+
+    <div role="alert">
+        <span>You have {{count}} notifications</span>
+    </div>
+</section>
+
+<section ng-controller="SubmissionController">
+    <h2>Submit status</h2>
+
+    <p>Automatically say the phrase (ng-if changes), polite</p>
+
+    <div ng-if="success" class="success" role="status">
+        Message successfully sent.
+    </div>
+
+    <button ng-click="success=true">Click me!</button>
+
+</section>
+
+<script>
+    angular.module("a11y", [])
+            .controller("FieldErrorController", function () {
+                this.check = function () {
+                    this.isIncorrect = this.text.length < 5;
+                    this.isNotFound = true;
+
+                    if (this.text === "MikeLee") {
+                        this.isNotFound = false;
+                        this.users = ["MikeLee", "Mickael", "Osef"];
+                    }
+                }
+            })
+            .controller("NotificationController", function ($scope) {
+                $scope.count = 0;
+
+                setInterval(function () {
+                    $scope.$apply(function () {
+                        $scope.count++;
+                    });
+                }, 20000);
+            })
+            .controller("SubmissionController", function () {
+
+            })
+</script>
+</body>
+</html>
