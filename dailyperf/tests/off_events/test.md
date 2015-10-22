@@ -1,15 +1,15 @@
 # The use case
 
-_DOM Events are not always cleaned up, what are the impacts on performance?_
+_DOM Events are not always cleaned up, what is the impact on performance?_
 
 **tl;dr** The impact is HUGE, always remove events binded on an element; each occurence of ```.on()/addEventListener()``` should have its ```.off()/removeEventListener()```
 
 [RAIL](https://developers.google.com/web/tools/profile-performance/evaluate-performance/rail) performance impact:
 
-**R**esponse: Major, the application will become more and more slower.
-**A**nimation: Minor, but as the application will become more and more slower, the browser will not be able to render fluid animations.
-**I**dle: N/A
-**L**oad: No impact on the load time.
+R: Major, the application will become more and more slower.
+A: Minor, but as the application will become more and more slower, the browser will not be able to render fluid animations.
+I: N/A
+L: No impact on the load time.
 
 ## The Question
 
@@ -34,7 +34,7 @@ Yielded:
 ```
 The same method was attached 6 times on the ``body``, it means that once I click on the ``body`` element, this method is called **6 times**!
 
-So, what is really happening in term of performance when we forget to clean those events registries?
+So, what is really happening in term of performance when we forget to clean those registered events?
 
 ## The answer
 
@@ -79,7 +79,7 @@ Notice the ```timesheet = undefined``` instruction, what do you think will happe
 - You resize the window ?
 
 Both methods will still continue to be executable, resizing the window will log "_resize_" and the click event on the button will still log "_submit, [2]_".
-So you probably guessed that well, but what should freak you up the most is this "_submit, [2]_", why?
+So you probably guessed that well, but what should freak you up the most is this "_submit, [{}, {}, ...]_", why?
 
 Because you explicitly destroyed the timesheet, and this big fat array is **still in memory!**
 
