@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular applyScope</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+</head>
+<body ng-app="demo">
+<header>
+    <h1>ApplyScope</h1>
+    <menu></menu>
+</header>
+<main ng-controller="demoCtrl">
+    Coucou
+</main>
+
+<script>
+    angular
+            .module('demo', [])
+            .directive("menu", function () {
+                return {
+                    templateUrl: 'dropdown.html',
+                    link: function ($scope, $element) {
+                        $scope.selection = "toto";
+
+                        $element.on('click', 'a', function () {
+                            var text = this.text;
+
+                            $scope.$broadcast("USER_SELECT", text);
+                        });
+                        
+                        $scope.$on("USER_SELECTED", function ($event, value) {
+                            $scope.selection = value;
+
+                            $scope.$apply();
+                        });
+                    }
+                }
+            })
+            .controller("demoCtrl", function ($scope) {
+                $scope.context = {};
+
+                $scope.$on("USER_SELECT", function ($event, text) {
+                    $scope.context.selection = text;
+
+                    $scope.$apply();
+                });
+
+                $scope.$watch("context.selection", function (value) {
+                    if (value) {
+                        $scope.selection = value;
+
+                        $scope.$emit("USER_SELECTED", value + 2);
+                    }
+                }, true);
+            });
+</script>
+</body>
+</html>
