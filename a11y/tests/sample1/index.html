@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        /*body {*/
+            /*font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif*/
+        /*}*/
+
+        p {
+            color: darkgrey;
+            border: 1px solid currentColor;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <input type="text">
+    <header id="comments" aria-hidden="true">
+        Comments <span>2</span>
+    </header>
+    <ul aria-describedby="comments">
+        <li aria-labelledby="comment1">
+            <span aria-hidden="true">Comment 1</span>
+            <span id="comment1" class="glyphicon glyphicon-option-horizontal" title="Long comment 1" aria-hidden="true"></span>
+            <!--<span class="sr-only" id="comment11">Long comment 1 from sr-only</span>-->
+        </li>
+        <li><span>Comment 2</span></li>
+    </ul>
+</section>
+<p>
+    No aria-labelby on li <br>
+    i tag in li will break the reading flow (bullet + span + i are tabable) (i must bu aria hidden) <br>
+    aria-labelledby can refers element with aria-hidden
+</p>
+</body>
+</html>
