@@ -10,7 +10,7 @@ angular
                 this.isLoading = true;
 
                 usersStore.addChangeListener(() => {
-                    this.items = usersStore.getItems();
+                    this.items = usersStore.items();
                     this.isLoading = false;
                 });
 

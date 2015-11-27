@@ -3,6 +3,7 @@
 angular
     .module('components.users.store', [])
     .factory('usersStore', function (dispatcher, emiter) {
+        //inherit from emiter class to get emit function and addChangeListner
         angular.extend(this, emiter);
 
         let store = [],
@@ -15,13 +16,13 @@ angular
                     context.emit('change');
                     break;
                 case 'users:get':
-                    store = action.data.map((userRaw) => ({ name: userRaw.name })); //TODO: destructuring
+                    store = action.data.map((userRaw) => ({ name: userRaw.name })); //TODO: destructuring, not supported
                     context.emit('change');
                     break;
             }
         });
-
-        this.getItems = () => angular.copy(store); //immutable
+        
+        this.items = () => angular.copy(store) //immutable, break the reference
 
         return this;
     })
