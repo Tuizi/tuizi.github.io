@@ -1,0 +1,21 @@
+{
+    "name": "AngularFlux",
+    "authors": [
+        "Fabien Rogeret <fabien.rogeret@gmail.com>"
+    ],
+    "description": "",
+    "main": "",
+    "moduleType": [],
+    "license": "MIT",
+    "homepage": "",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "~1.4.8"
+    }
+}

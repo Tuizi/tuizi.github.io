@@ -1,0 +1,13 @@
+<div>
+    <span ng-if="users.isLoading">Loading users...</span>
+    <ol ng-if="!users.isLoading">
+        <li ng-repeat="user in users.items">{{user.name}}</li>
+    </ol>
+    <form ng-submit="users.add()" ng-if="!users.isLoading">
+        <label>
+            Enter an user name
+            <input type="text" ng-model="users.newUser.name" ng-required="true" />
+        </label>
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+</div>
