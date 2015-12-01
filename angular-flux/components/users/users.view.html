@@ -1,0 +1,8 @@
+<ul class="users">
+    <li ng-repeat="user in users.items" class="user">
+        <button ng-click="users.select(user)">
+            <div class="user-name">{{user.name}}</div>
+            <div class="user-email">{{user.email}}</div>
+        </button>
+    </li>
+</ul>

@@ -8,19 +8,67 @@
         body {
             font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
         }
+        
+        button {
+            background: none;
+            border: 2px solid currentColor;
+            color: skyblue;
+            transition: 200ms;
+        }
+        
+        button:hover {
+            background: skyblue;
+            color: white;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .users {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border-bottom: 1px solid black;
+        }
+        
+        .user {
+            margin: 5px;
+        }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 </head>
 
 <body ng-app="angular-flux">
+    <h1>Test Flux</h1>
 
     <section>
+        <h2>Users</h2>
         <users></users>
     </section>
 
-    <script src="components/users/store.js"></script>
-    <script src="components/users/actions.js"></script>
-    <script src="components/users/users.js"></script>
+    <section>
+        <h2>Albums</h2>
+        <albums></albums>
+    </section>
+
+    <!--Common-->
+    <script src="constants.js"></script>
+
+    <!--Components-->
+    <!--Albums-->
+    <script src="components/albums/albums.store.js"></script>
+    <script src="components/albums/albums.actions.js"></script>
+    <script src="components/albums/albums.view.js"></script>
+
+    <!--Users-->
+    <script src="components/users/users.store.js"></script>
+    <script src="components/users/users.actions.js"></script>
+    <script src="components/users/users.view.js"></script>
+
+    <!--App-->
     <script src="app.js"></script>
 </body>
 

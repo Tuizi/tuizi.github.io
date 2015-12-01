@@ -1,37 +1,43 @@
 'use strict';
 
 angular
-    .module('angular-flux', ['components.users'])
+    .module('angular-flux', ['constants', 'components.albums', 'components.users'])
     .factory('dispatcher', function () {
-        this.listeners = [];
+        let _callbacks = [];
 
-        this.dispatch = (action) => {
-            console.debug('dispatch', action.type, action.data);
-            this.listeners.forEach((listener) => {
-                listener({
-                    type: action.type,
-                    data: angular.copy(action.data) //immutable
-                });
-            });
-        };
+        console.debug('create dispatcher');
 
-        this.addListener = (listener) => {
-            this.listeners.push(listener);
-        };
+        angular.extend(this, {
+            register: (callback) => {
+                console.debug('dispatcher register a callback');
+                _callbacks.push(callback);
+                return _callbacks.length - 1;
+            },
+            dispatch: (action) => {
+                console.debug('DISPATCH', action.type);
+                _callbacks.forEach((callback) => {
+                    callback(action);
+                })
+            }
+        });
 
         return this;
     })
-    .factory('emiter', function () {
-        let listeners = [];
+    .factory('store', function (ACTIONS, dispatcher) {
+        'use strict';
+        let _callbacks = [];
 
-        this.emit = (event) => {
-            listeners.forEach((listener) => {
-                listener(event)
+        console.debug('create a store');
+
+        this.emitChange = () => {
+            _callbacks.forEach((listener) => {
+                listener()
             })
         };
-        this.addChangeListener = (listener) => {
-            listeners.push(listener);
-        }
+
+        this.onChange = (listener) => {
+            _callbacks.push(listener);
+        };
 
         return this;
-    })
+    });
