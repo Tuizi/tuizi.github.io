@@ -1,11 +1,10 @@
 angular
     .module('constants', [])
     .value('ACTIONS', {
-        ALBUMS: {
-            GET: 'ALBUMS_GET'
+        DATES: {
+            GENERATE: 'DATES.GENERATE'
         },
         USERS: {
-            GET: 'USERS_GET',
-            SELECT: 'USERS_SELECT'
+            UPDATE: 'USERS.UPDATE'
         }
     })

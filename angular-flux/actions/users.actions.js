@@ -1,21 +1,14 @@
 angular
-    .module('components.users')
+    .module('actions')
     .factory('usersActions', function (ACTIONS, $http, dispatcher) {
         $http
             .get('http://jsonplaceholder.typicode.com/users')
             .then((result) => {
                 dispatcher.dispatch({
-                    type: ACTIONS.USERS.GET,
+                    type: ACTIONS.USERS.UPDATE,
                     payload: angular.copy(result.data)
                 })
             });
-
-        this.select = (user) => {
-            dispatcher.dispatch({
-                type: ACTIONS.USERS.SELECT,
-                payload: angular.copy(user)
-            })
-        }
 
         return this;
     })

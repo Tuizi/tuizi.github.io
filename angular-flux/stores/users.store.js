@@ -1,11 +1,11 @@
 angular
-    .module('components.users', [])
-    .factory('usersStore', function (ACTIONS, store, dispatcher) {
+    .module('stores')
+    .factory('usersStore', function (ACTIONS, Store, dispatcher) {
         'use strict';
-
-        var usersStore = this;
-
-        angular.extend(usersStore, store);
+        let usersStore = this;
+        angular.extend(usersStore, new Store());
+        
+        this.store = "users";
 
         let users = []
 
@@ -13,10 +13,9 @@ angular
             return angular.copy(users);
         }
 
-        console.debug('users register for dispatcher');
         dispatcher.register((action) => {
             switch (action.type) {
-                case ACTIONS.USERS.GET:
+                case ACTIONS.USERS.UPDATE:
                     users = action.payload;
                     usersStore.emitChange();
                     break;

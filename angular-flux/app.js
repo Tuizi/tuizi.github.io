@@ -1,15 +1,13 @@
 'use strict';
 
 angular
-    .module('angular-flux', ['constants', 'components.albums', 'components.users'])
+    .module('angular-flux',
+        ['constants', 'stores', 'actions', 'components'])
     .factory('dispatcher', function () {
         let _callbacks = [];
 
-        console.debug('create dispatcher');
-
         angular.extend(this, {
             register: (callback) => {
-                console.debug('dispatcher register a callback');
                 _callbacks.push(callback);
                 return _callbacks.length - 1;
             },
@@ -20,24 +18,6 @@ angular
                 })
             }
         });
-
-        return this;
-    })
-    .factory('store', function (ACTIONS, dispatcher) {
-        'use strict';
-        let _callbacks = [];
-
-        console.debug('create a store');
-
-        this.emitChange = () => {
-            _callbacks.forEach((listener) => {
-                listener()
-            })
-        };
-
-        this.onChange = (listener) => {
-            _callbacks.push(listener);
-        };
 
         return this;
     });
