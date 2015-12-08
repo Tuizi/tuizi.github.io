@@ -1,2 +1,2 @@
 angular
-    .module('components', [])
+    .module('components', ['stores', 'actions'])

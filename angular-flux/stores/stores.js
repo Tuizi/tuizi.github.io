@@ -1,24 +1,19 @@
 angular
     .module('stores', ['constants'])
-    .service('Store', function (ACTIONS, dispatcher) {
+    .factory('Store', function () {
         'use strict';
 
-        let Store = function () {
-            let _callbacks = [];
-            console.count('store created');
+        return function () {
+            this._callbacks = [];
 
-            return {
-                emitChange: () => {
-                    _callbacks.forEach((listener) => {
-                        listener()
-                    })
-                },
-                onChange: (listener) => {
-                    console.debug('register a listener');
-                    _callbacks.push(listener);
-                }
-            }
-        }
+            this.emitChange = () => {
+                this._callbacks.forEach((listener) => {
+                    listener();
+                })
+            };
 
-        return Store;
+            this.onChange = (listener) => {
+                this._callbacks.push(listener);
+            };
+        };
     });

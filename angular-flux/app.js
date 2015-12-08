@@ -2,7 +2,7 @@
 
 angular
     .module('angular-flux',
-        ['constants', 'stores', 'actions', 'components'])
+        ['constants', 'components'])
     .factory('dispatcher', function () {
         let _callbacks = [];
 

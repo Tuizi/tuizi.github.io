@@ -2,10 +2,9 @@ angular
     .module('stores')
     .factory('datesStore', function (ACTIONS, Store, dispatcher) {
         'use strict';
-        let datesStore = this;
-        angular.extend(datesStore, new Store());
-        
-        this.store = "dates";
+
+        let datesStore = angular.extend(this, new Store()),
+            dates = [];
 
         function generateDates(days) {
             let dates = [];
@@ -18,10 +17,9 @@ angular
             return dates;
         }
 
-        let dates = [];
-        this.getAll = () => angular.copy(dates);
+        datesStore.getAll = () => angular.copy(dates);
+        datesStore.getById = (id) => angular.copy(_.find(dates, {id: id}));
 
-console.debug('datesStore listen actions');
         dispatcher.register((action) => {
             switch (action.type) {
                 case ACTIONS.DATES.GENERATE:
@@ -31,5 +29,5 @@ console.debug('datesStore listen actions');
             }
         })
 
-        return this;
+        return datesStore;
     })

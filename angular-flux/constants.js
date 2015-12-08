@@ -6,5 +6,12 @@ angular
         },
         USERS: {
             UPDATE: 'USERS.UPDATE'
+        },
+        SHIFTCREATOR: {
+            OPEN: 'SHIFTCREATOR.OPEN',
+            CLOSE: 'SHIFTCREATOR.CLOSE'
+        },
+        SHIFTS: {
+            CREATE: 'SHIFTS.CREATE'
         }
     })

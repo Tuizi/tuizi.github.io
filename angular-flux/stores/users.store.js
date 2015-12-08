@@ -2,16 +2,12 @@ angular
     .module('stores')
     .factory('usersStore', function (ACTIONS, Store, dispatcher) {
         'use strict';
-        let usersStore = this;
-        angular.extend(usersStore, new Store());
-        
-        this.store = "users";
 
-        let users = []
+        let usersStore = angular.extend(this, new Store()),
+            users = [];
 
-        this.getAll = () => {
-            return angular.copy(users);
-        }
+        usersStore.getAll = () => angular.copy(users);
+        usersStore.getById = (id) => angular.copy(_.find(users, { id: id }));
 
         dispatcher.register((action) => {
             switch (action.type) {

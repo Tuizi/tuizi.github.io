@@ -4,13 +4,13 @@ angular
         
         this.openCreateShift = (employeeId, dateId) => {
             dispatcher.dispatch({
-                type: ACTIONS.SHIFTCREATOR.CREATE,
+                type: ACTIONS.SHIFTCREATOR.OPEN,
                 payload: {
                     employeeId: employeeId,
                     dateId: dateId
                 }
             })
-        }
+        };
 
         return this;
     })
