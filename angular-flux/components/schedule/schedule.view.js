@@ -7,15 +7,49 @@ angular
             templateUrl: 'components/schedule/schedule.view.html',
             controllerAs: 'schedule',
             controller: function ($scope,
-                scheduleActions, usersActions, datesActions,
+                usersActions, datesActions,
                 usersStore, datesStore, shiftsStore,
                 dateUtils) {
                 'use strict';
-                let schedule = this,
-                    $schedule = $('.schedule');
+                let schedule = this;
+
+                schedule.rows = [];
+
+                function buildRows(employees, dates, shiftsStore) {
+                    let rows = [];
+
+                    if (!employees || !dates) {
+                        return rows;
+                    }
+
+                    for (let ei = 0, elen = employees.length; ei < elen; ei++) {
+                        let employee = employees[ei];
+
+                        let newRow = {
+                            employee: employee,
+                            dates: []
+                        }
+
+                        for (let di = 0, dlen = dates.length; di < dlen; di++) {
+                            let date = dates[di];
+                            let shift = shiftsStore.getShiftFor(employee.id, date.id);
+
+                            newRow.dates.push({ date: date, shift: shift });
+                        }
+
+                        rows.push(newRow);
+                    }
+
+                    return rows;
+                }
+
+                function buildRowsWrapper() {
+                    schedule.rows = buildRows(schedule.employees, schedule.dates, shiftsStore);
+                }
 
                 usersStore.onChange(() => {
-                    schedule.users = usersStore.getAll();
+                    schedule.employees = usersStore.getAll();
+                    buildRowsWrapper();
                 });
 
                 datesStore.onChange(() => {
@@ -24,25 +58,12 @@ angular
                         item.label = dateUtils.getDateLabel(date);
                         return item;
                     });
+                    buildRowsWrapper();
                 });
 
                 shiftsStore.onChange(() => {
-                    schedule.shifts = shiftsStore.getAll();
+                    buildRowsWrapper();
                 });
-
-                $schedule.on('click', '.shift', (ev) => {
-                    //need scope.apply because event come from jquery not angular
-                    $scope.$apply(() => {
-                        let employeeId = ev.target.attributes['data-employee-id'].value,
-                            dateId = ev.target.attributes['data-date-id'].value;
-
-                        scheduleActions.openCreateShift(parseInt(employeeId), parseInt(dateId));
-                    });
-                })
-
-                $scope.$on('destroy', () => {
-                    $schedule.off('click');
-                })
 
                 usersActions.load();
                 datesActions.load();

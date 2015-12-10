@@ -7,11 +7,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="app.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 </head>
 
 <body ng-app="angular-flux">
@@ -23,8 +18,14 @@
         <shift-creator></shift-creator>
     </main>
     <footer id="footer">
-        Addons
+        <h2>Addons</h2>
     </footer>
+    
+    <!--Libs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 
     <!--Common-->
     <script src="constants.js"></script>
@@ -40,13 +41,17 @@
     <script src="actions/actions.js"></script>
     <script src="actions/dates.actions.js"></script>
     <script src="actions/users.actions.js"></script>
-    <script src="actions/schedule.actions.js"></script>
+    <script src="actions/shifts.actions.js"></script>
     <script src="actions/shift-creator.actions.js"></script>
 
     <!--Components-->
     <script src="components/components.js"></script>
     <script src="components/utils.components.js"></script>
+    
     <script src="components/schedule/schedule.view.js"></script>
+    <script src="components/schedule-row/schedule-row.view.js"></script>
+    <script src="components/schedule-row-shift/schedule-row-shift.view.js"></script>
+    
     <script src="components/shift-creator/shift-creator.view.js"></script>
 
     <!--App-->

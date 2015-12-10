@@ -1,0 +1,4 @@
+<td>{{row.data.employee.name}}</td>
+<td ng-repeat="date in row.data.dates">
+	<schedule-row-shift data="date" employee="row.data.employee"></schedule-row-shift>
+</td>

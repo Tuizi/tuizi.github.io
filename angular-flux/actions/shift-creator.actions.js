@@ -8,14 +8,11 @@ angular
             })
         };
 
-        this.create = (newShift) => {
+        this.open = (shift) => {
             dispatcher.dispatch({
-                type: ACTIONS.SHIFTS.CREATE,
-                payload: newShift
+                type: ACTIONS.SHIFTCREATOR.OPEN,
+                payload: shift
             })
-
-            //use dispatcher.waitFor
-            this.close();
         };
 
         return this;

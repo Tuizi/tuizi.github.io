@@ -6,13 +6,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="user in schedule.users">
-            <td>{{user.name}}</td>
-            <td ng-repeat="date in schedule.dates">
-                <button class="shift" data-employee-id="{{user.id}}" data-date-id="{{date.id}}">
-                    
-                </button>
-            </td>
-        </tr>
+        <tr schedule-row data="row" ng-repeat="row in schedule.rows"></tr>
     </tbody>
 </table>
