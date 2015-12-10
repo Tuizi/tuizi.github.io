@@ -12,7 +12,7 @@ angular
                     shiftCreator = this;
 
                 shiftCreatorStore.onChange(() => {
-                    var isOpen = shiftCreatorStore.isOpen();
+                    let isOpen = shiftCreatorStore.isOpen();
 
                     if (isOpen) {
                         let data = shiftCreatorStore.getData();

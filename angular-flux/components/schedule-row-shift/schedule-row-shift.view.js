@@ -13,7 +13,7 @@ angular
             controller: function ($scope, shiftCreatorActions) {
                 'use strict';
 
-                var shift = $scope.data.shift;
+                let shift = $scope.data.shift;
 
                 if (shift) {
                     this.text = shift.name;
