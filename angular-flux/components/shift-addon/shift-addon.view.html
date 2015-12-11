@@ -2,7 +2,7 @@
 	{{shiftAddon.shifts.length}} shift created.
 	<ul class="shiftaddon-list">
 		<li ng-repeat="shift in shiftAddon.shifts" class="shiftaddon-shift">
-			<button class="shift">{{shift.name}}</button>
+			<button class="shift" ng-click="shiftAddon.edit(shift)">{{shift.name}}</button>
 		</li>
 	</ul>
 </div>

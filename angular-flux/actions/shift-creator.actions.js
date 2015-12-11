@@ -11,7 +11,7 @@ angular
         this.open = (shift) => {
             dispatcher.dispatch({
                 type: ACTIONS.SHIFTCREATOR.OPEN,
-                payload: shift
+                payload: { employeeId: shift.employeeId, dateId: shift.dateId, shiftId: shift.shiftId }
             })
         };
 

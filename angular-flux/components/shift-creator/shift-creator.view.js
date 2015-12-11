@@ -17,7 +17,7 @@ angular
                     if (isOpen) {
                         let data = shiftCreatorStore.getData();
 
-                        shiftCreator.newShift = {
+                        shiftCreator.shift = {
                             employee: {
                                 name: data.employee.name,
                                 id: data.employee.id
@@ -26,7 +26,8 @@ angular
                                 id: data.date.id,
                                 label: dateUtils.getDateLabel(data.date.date)
                             },
-                            name: null
+                            name: data.name,
+                            id: data.id
                         }
                         $shiftCreatorModal.modal('show');
                     }
@@ -36,11 +37,16 @@ angular
                 })
 
                 this.submit = () => {
-                    shiftsActions.create({
-                        employeeId: shiftCreator.newShift.employee.id,
-                        dateId: shiftCreator.newShift.date.id,
-                        name: shiftCreator.newShift.name
-                    });
+                    if (_.isString(shiftCreator.shift.id)) {
+                        shiftsActions.edit(shiftCreator.shift.id, shiftCreator.shift.name);
+                    }
+                    else {
+                        shiftsActions.create({
+                            employeeId: shiftCreator.shift.employee.id,
+                            dateId: shiftCreator.shift.date.id,
+                            name: shiftCreator.shift.name
+                        });
+                    }
                     shiftCreatorActions.close();
                 };
 

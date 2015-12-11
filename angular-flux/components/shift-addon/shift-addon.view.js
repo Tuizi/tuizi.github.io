@@ -6,7 +6,7 @@ angular
             replace: true,
             templateUrl: 'components/shift-addon/shift-addon.view.html',
             controllerAs: 'shiftAddon',
-            controller: function (shiftsStore) {
+            controller: function (shiftsStore, shiftCreatorActions) {
                 'use strict';
 
                 this.shifts = [];
@@ -14,6 +14,10 @@ angular
                 shiftsStore.onChange(() => {
                     this.shifts = shiftsStore.getAll();
                 })
+
+                this.edit = (shift) => {
+                    shiftCreatorActions.open({ shiftId: shift.id });
+                }
             }
         }
     });

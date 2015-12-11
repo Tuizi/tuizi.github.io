@@ -12,6 +12,7 @@ angular
             CLOSE: 'SHIFTCREATOR.CLOSE'
         },
         SHIFTS: {
-            CREATE: 'SHIFTS.CREATE'
+            CREATE: 'SHIFTS.CREATE',
+            EDIT: 'SHIFTS.EDIT'
         }
     })
