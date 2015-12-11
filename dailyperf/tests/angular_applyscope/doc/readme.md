@@ -36,9 +36,7 @@ Angular documentation: _"Usually, you don't call $digest() directly in controlle
  ```
  // HTML
  <button ng-click="toto.click()">ClickMe</button>
- ```
- 
- ```
+
  // Javascript
 this.click = function() {
 	console.debug('ng-click code executed');
@@ -134,7 +132,7 @@ Angular create a new $digest only cycle, when the promise is resolved, so if you
 
 ### 4. In a watcher
 
-As a promise, you are already in the Angular context, so... 
+Watchers are already in the Angular context, so... 
 
 #### Third party example
 
@@ -155,7 +153,8 @@ document.querySelector('#button2').onclick = function() {
  
 ![Watcher with DOM event](watch_domevents.jpg "Watcher with DOM event")
  
-No need to call $apply() or $digest()
+- You call $apply in the onclick function because you are out of the Angular context  
+- In the watcher, never call $apply() or $digest() because you are 100% of the time in a cycle
 
 #### In an angular context
 
@@ -184,6 +183,6 @@ this.ngClick = function() {
 
 1 $digest() is bad, really, never use it  
 2 $apply(_your code_) is to execute code that are not executed in the Angular context, like third party library, events dom...  
-3 $timeout, $evalAsync, ... try to never use them.  
+3 $timeout, $evalAsync, ... try to never use them and trust me, you can  
 4 You can avoid 90% of $digest/$apply, the 10 others are only for point #2  
 5 Only **one** misused $apply() or $digest() and you start a dramatic cascade of "... already in progress" errors.
