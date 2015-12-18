@@ -1,20 +1,19 @@
+import "./app.less"
+
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
-import {startTask} from '../actions'
+import {startTask} from '../../actions'
 
-import TaskNew from '../components/TaskNew'
-import TaskList from '../components/TaskList'
+import TaskNew from '../../components/TaskNew'
+import TaskList from '../../components/TaskList'
 
 class App extends Component {
 	render() {
 		const { dispatch, tasks } = this.props
 		
 		return (
-			<div>
-				<header>
-					<h1>Pomodoro</h1>
-				</header>
+			<div className="app">
 				<main>
 					<TaskList tasks={tasks} />
 					<TaskNew onStartClick={(name, time) => dispatch(startTask(name, time))} />

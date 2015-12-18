@@ -21,7 +21,7 @@ export default class TaskNew extends Component {
 						ref="time"
 						defaultValue="25"/>
 				</div>
-				<button type="submit">Start</button>
+				<button className="primary" type="submit">Start</button>
 			</form>
 		)
 	}
