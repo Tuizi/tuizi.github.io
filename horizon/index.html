@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <title>Horizon</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700" rel="stylesheet">
+    <link href="http://overpass-30e2.kxcdn.com/overpass.css" rel="stylesheet" />
+    <link rel="stylesheet" href="dist/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/bootflat.min.css">
+    <link rel="stylesheet" href="dist/horizon.css">
+
+    <style>
+        body {
+            padding: 40px;
+        }
+        
+        .controls label {
+            min-idth: 200px;
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .headings,
+        .controls label {
+            color: #1059a6;
+        }
+        
+        header h1 {
+            color: initial;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/dist/horizon.css" download>Download the CSS file</a>
+    </header>
+
+    <div class="row">
+        <section class="headings">
+            <header>
+                <h1>Headings</h1>
+            </header>
+            <h1>Page Title (h1)</h1>
+            <h2>Panel Title (h2)</h2>
+            <h3>Section Title (h3)</h3>
+            <h4>Group Title (h4)</h4>
+        </section>
+
+        <section class="controls">
+            <header>
+                <h1>Controls</h1>
+            </header>
+            <label class="action-label">Action label</label>
+            <label class="description-label">Description label</label>
+            <label class="description-help-label">Description help label</label>
+            <label class="description-status-label">Description status label</label>
+            <label class="big-label">Big label</label>
+        </section>
+    </div>
+
+    <div class="row">
+        <section class="buttons">
+            <header>
+                <h1>Buttons</h1>
+            </header>
+            <button type="button" disabled class="btn btn-default btn-block">Disabled</button>
+            <button type="button" class="btn btn-default btn-block">Default</button>
+            <button type="button" class="btn btn-primary btn-block">Important</button>
+            <button type="button" class="btn btn-success btn-block">Confirm</button>
+            <button type="button" class="btn btn-warning btn-block">Warning</button>
+            <button type="button" class="btn btn-danger btn-block">Delete</button>
+        </section>
+        <section>
+            <header>
+                <h1>Dropdowns</h1>
+            </header>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Default <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+
+            <button disabled type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Disabled <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+
+            <div class="btn-group">
+                  <button type="button" class="btn btn-default">Three</button>
+                  <button type="button" class="btn btn-default">Buttons</button>
+                  <button type="button" class="btn btn-default">Group</button>
+                </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="dist/icheck.min.js"></script>
+    <script src="dist/jquery.fs.selecter.min.js"></script>
+    <script src="dist/jquery.fs.stepper.min.js"></script>
+</body>
+
+</html>
