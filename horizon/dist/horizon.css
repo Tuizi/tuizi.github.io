@@ -93,7 +93,7 @@ h4 {
 .btn-default:active, .btn-default:active:focus {
     border-top-width: 3px;
     border-bottom-width: 1px;
-        color: #0b3d91;
+    color: #0b3d91;
     background-color: #ededed;
 }
 
@@ -126,4 +126,33 @@ h4 {
 .btn-danger {
     background-color: #f33d4c;
     border-color: #f33d4c;
+}
+
+.btn-group .btn:nth-child(n+2) {
+    border-left: none;
+    position: relative;
+}
+
+.btn-group .btn:nth-child(n+2)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    background-color: #a1a5ac;
+    width: 1px;
+}
+
+.btn-group .btn-icon {
+    padding: 9px 23px;
+}
+
+.btn-light-success {
+    background: none;
+    color: #51cc66;
+}
+
+.btn-light-danger {
+    background: none;
+    color: #f33d4c;
 }

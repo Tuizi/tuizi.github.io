@@ -28,6 +28,27 @@
         header h1 {
             color: initial;
         }
+        
+        .row {
+            display: flex;
+        }
+        
+        .row section {
+            width: 50%;
+            margin: 10px;
+        }
+        
+        .buttons-container {
+            width: 200px;
+        }
+        
+        .buttons-container button {
+            margin: 10px 0;
+        }
+        
+        .btn-group-container .btn-group {
+            margin: 10px 0;
+        }
     </style>
 </head>
 
@@ -59,46 +80,89 @@
         </section>
     </div>
 
-    <div class="row">
+    <div>
         <section class="buttons">
             <header>
                 <h1>Buttons</h1>
             </header>
-            <button type="button" disabled class="btn btn-default btn-block">Disabled</button>
-            <button type="button" class="btn btn-default btn-block">Default</button>
-            <button type="button" class="btn btn-primary btn-block">Important</button>
-            <button type="button" class="btn btn-success btn-block">Confirm</button>
-            <button type="button" class="btn btn-warning btn-block">Warning</button>
-            <button type="button" class="btn btn-danger btn-block">Delete</button>
+            <div class="row">
+                <section>
+                    <div class="buttons-container">
+                        <button type="button" disabled class="btn btn-default btn-block">Disabled</button>
+                        <button type="button" class="btn btn-default btn-block">Default</button>
+                        <button type="button" class="btn btn-primary btn-block">Important</button>
+                        <button type="button" class="btn btn-success btn-block">Confirm</button>
+                        <button type="button" class="btn btn-warning btn-block">Warning</button>
+                        <button type="button" class="btn btn-danger btn-block">Delete</button>
+                        <button type="button" class="btn btn-light-success btn-block">Light confirm</button>
+                        <button type="button" class="btn btn-light-success btn-block"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> With icon</button>
+                        <button type="button" class="btn btn-light-danger btn-block">Light Delete</button>
+                        <button type="button" class="btn btn-light-danger"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></button>
+                    </div>
+                </section>
+                <section class="btn-group-container">
+                    <div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">Three</button>
+                            <button type="button" class="btn btn-default">Buttons</button>
+                            <button type="button" class="btn btn-default">Group</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></button>
+                            <button type="button" class="btn btn-default btn-icon"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></button>
+                            <button type="button" class="btn btn-default btn-icon"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </section>
+    </div>
+
+    <div class="row">
         <section>
             <header>
                 <h1>Dropdowns</h1>
             </header>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Default <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
+            <div class="dropdown">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Default <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
 
-            <button disabled type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Disabled <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
+            <div class="dropdown">
+                <button disabled type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Disabled <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
 
             <div class="btn-group">
-                  <button type="button" class="btn btn-default">Three</button>
-                  <button type="button" class="btn btn-default">Buttons</button>
-                  <button type="button" class="btn btn-default">Group</button>
-                </div>
+                <button type="button" class="btn btn-default">Default</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
         </section>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
