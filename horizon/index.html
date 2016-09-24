@@ -49,6 +49,10 @@
         .btn-group-container .btn-group {
             margin: 10px 0;
         }
+
+        .toggle .handle {
+            top: auto !important;
+        }
     </style>
 </head>
 
@@ -95,9 +99,6 @@
                         <button type="button" class="btn btn-warning btn-block">Warning</button>
                         <button type="button" class="btn btn-danger btn-block">Delete</button>
                         <button type="button" class="btn btn-light-success btn-block">Light confirm</button>
-                        <button type="button" class="btn btn-light-success btn-block"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> With icon</button>
-                        <button type="button" class="btn btn-light-danger btn-block">Light Delete</button>
-                        <button type="button" class="btn btn-light-danger"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></button>
                     </div>
                 </section>
                 <section class="btn-group-container">
@@ -114,6 +115,11 @@
                             <button type="button" class="btn btn-default btn-icon"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></button>
                             <button type="button" class="btn btn-default btn-icon"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
                         </div>
+                    </div>
+                    <div class="buttons-container">
+                        <button type="button" class="btn btn-light-success btn-block"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> With icon</button>
+                        <button type="button" class="btn btn-light-danger btn-block">Light Delete</button>
+                        <button type="button" class="btn btn-light-danger"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></button>
                     </div>
                 </section>
             </div>
@@ -161,8 +167,45 @@
                     <li><a href="#">Separated link</a></li>
                 </ul>
             </div>
-        </section>
 
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">Default</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <header>
+                <h1>Inputs</h1>
+            </header>
+            <div>
+                <label class="toggle">
+			        <input type="checkbox">
+			        <span class="handle"></span>
+			    </label>
+            </div>
+            <div>
+                <label class="toggle">
+			        <input type="checkbox" checked="">
+			        <span class="handle"></span>
+                </label>
+            </div>
+            <div>
+                <label class="toggle">
+			        <input type="checkbox" disabled="">
+			        <span class="handle"></span>
+			    </label>
+            </div>
+        </section>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -170,6 +213,12 @@
     <script src="dist/icheck.min.js"></script>
     <script src="dist/jquery.fs.selecter.min.js"></script>
     <script src="dist/jquery.fs.stepper.min.js"></script>
+
+    <script>
+        // $(document).ready(function() {
+        //     $('input').iCheck();
+        // });
+    </script>
 </body>
 
 </html>

@@ -156,3 +156,32 @@ h4 {
     background: none;
     color: #f33d4c;
 }
+
+.toggle .handle {
+    width: 60px;
+    height: 25px;
+}
+
+.toggle input[type=checkbox]:checked+.handle::after, 
+.toggle input[type=radio]:checked+.handle::after {
+    left: 37px;
+    box-shadow: inset 0 0 0 1px #0b3d91,1px 1px 1px #c7ccd3;
+}
+
+.toggle input[type=checkbox]:checked+.handle::before, 
+.toggle input[type=radio]:checked+.handle::before {
+    background-color: #0b3d91;
+    width: 57px;
+}
+
+.toggle .handle:hover {
+    box-shadow: inset 0 0 0 1px #0b3d91;
+}
+
+.toggle .handle::after, .toggle .handle::before {
+    background-color: #a1a5ac;
+    height: 20px;
+    width: 20px;
+    top: 2px;
+    left: 2px;
+}
