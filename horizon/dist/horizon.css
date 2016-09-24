@@ -1,0 +1,187 @@
+h1 {
+    font-family: 'Overpass';
+    font-weight: 400;
+    text-align: left;
+    font-size: 36px;
+    line-height: 45px;
+}
+
+h2 {
+    font-family: 'Overpass';
+    font-weight: 700;
+    text-align: left;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'Fira Sans';
+    font-weight: 400;
+    text-align: left;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+h4 {
+    font-family: 'Fira Sans';
+    font-weight: 700;
+    text-align: left;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.action-label {
+    font-family: 'Fira Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.description-label {
+    font-family: 'Fira Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.description-help-label {
+    font-family: 'Fira Sans';
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.description-status-label {
+    font-family: 'Fira Sans';
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.big-label {
+     font-family: 'Fira Sans';
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 80px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.btn-default {
+    color: #0b3d91;
+    background-color: #ededed;
+    border-color: #a1a5ac !important;
+    border-width: 1px;
+}
+
+.btn-default:hover {
+    color: #0b3d91;
+    background-color: #ededed;
+    border-color: #0b3d91 !important;
+    border-bottom-width: 3px;
+}
+
+.btn-default:active, .btn-default:active:focus {
+    border-top-width: 3px;
+    border-bottom-width: 1px;
+    color: #0b3d91;
+    background-color: #ededed;
+}
+
+.btn-default:focus {
+    color: #ededed;
+    background: #0b3d91;
+}
+
+.btn-default:disabled {
+    color: #a1a5ac;
+    border-color: #a1a5ac;
+    background: #ededed;
+}
+
+.btn-primary{
+    background-color: #0abfe6;
+    border-color: #0abfe6;
+}
+
+.btn-success {
+    background-color: #51cc66;
+    border-color: #51cc66;
+}
+
+.btn-warning {
+    background-color: #ffcc32;
+    border-color: #ffcc32;
+}
+
+.btn-danger {
+    background-color: #f33d4c;
+    border-color: #f33d4c;
+}
+
+.btn-group .btn:nth-child(n+2) {
+    border-left: none;
+    position: relative;
+}
+
+.btn-group .btn:nth-child(n+2)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    background-color: #a1a5ac;
+    width: 1px;
+}
+
+.btn-group .btn-icon {
+    padding: 9px 23px;
+}
+
+.btn-light-success {
+    background: none;
+    color: #51cc66;
+}
+
+.btn-light-danger {
+    background: none;
+    color: #f33d4c;
+}
+
+.toggle .handle {
+    width: 60px;
+    height: 25px;
+}
+
+.toggle input[type=checkbox]:checked+.handle::after, 
+.toggle input[type=radio]:checked+.handle::after {
+    left: 37px;
+    box-shadow: inset 0 0 0 1px #0b3d91,1px 1px 1px #c7ccd3;
+}
+
+.toggle input[type=checkbox]:checked+.handle::before, 
+.toggle input[type=radio]:checked+.handle::before {
+    background-color: #0b3d91;
+    width: 57px;
+}
+
+.toggle .handle:hover {
+    box-shadow: inset 0 0 0 1px #0b3d91;
+}
+
+.toggle .handle::after, .toggle .handle::before {
+    background-color: #a1a5ac;
+    height: 20px;
+    width: 20px;
+    top: 2px;
+    left: 2px;
+}
