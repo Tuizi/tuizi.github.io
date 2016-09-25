@@ -185,3 +185,134 @@ h4 {
     top: 2px;
     left: 2px;
 }
+
+.form-control {
+    border-radius: 0;
+    color: #a1a5ac;
+}
+
+.form-control:hover {
+    border-color: #0b3d91;
+    border-bottom-width: 3px;
+}
+
+.form-control:focus {
+    color: #000;
+    border-color: #0b3d91;
+    border-top-width: 3px;
+    border-bottom-width: 1px;
+}
+
+.form-search .search-query,
+.form-search .search-query:first-child,
+.form-search .search-query:last-child {
+    border-radius: 0;
+}
+
+.search-only .search-icon {
+    color: #a1a5ac;
+}
+
+.form-group.has-success input {
+    border: 1px solid #a1a5ac;
+    border-right: 5px solid #51cc66;
+}
+
+a.list-group-item {
+    border-radius: 0;
+    border-bottom: 1px solid #ededed;
+}
+
+a.list-group-item:hover {
+    border-color: #0b3d91;
+    border-bottom-width: 3px;
+    color: #0b3d91;
+    background-color: #ededed;
+}
+
+a.list-group-item:focus {
+    color: #ededed;
+    background-color: #0b3d91;
+}
+
+a.list-group-item.list-group-header {
+    pointer-events: none;
+}
+
+a.list-group-item.list-group-header+a.list-group-item {
+    border-top-color: #a1a5ac;
+}
+
+.list-group-item-heading {
+    margin: 0;
+}
+
+a.list-group-item:first-child, .list-group-item:last-child {
+    border-radius: 0;
+}
+
+.list-group {
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.badge {
+    border-radius: 0;
+}
+
+.table>thead>tr>th {
+    border-bottom: 1px solid #a1a5ac;
+}
+
+.table tbody tr:hover th, .table tbody tr:hover td {
+    border: none;
+}
+
+.table tbody tr:hover {
+    border: 1px solid #0b3d91;
+    border-bottom-width: 3px;
+}
+
+.breadcrumb {
+    border-radius: 0;
+}
+
+.breadcrumb li {
+    background: #ededed;
+    transform: skewX(-45deg);
+}
+
+.breadcrumb li > * {
+    transform: skewX(45deg);
+}
+
+.breadcrumb-arrow {
+    background-color: #a1a5ac;
+}
+
+.breadcrumb-arrow li a::after, 
+.breadcrumb-arrow li a::before {
+    content: none;
+}
+
+.breadcrumb-arrow li a {
+    background: none;
+    border: none;
+}
+
+.progress {
+    border-radius: 0;
+    background-color: #a1a5ac;
+}
+
+.progress-bar {
+    background-color: #0b3d91;
+}
+
+.progress-striped .progress-bar, .progress-bar-striped {
+    background-size: 9px 20px;
+}
+
+.progress-striped .progress-bar-success {
+        background-image: linear-gradient(115deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+}
