@@ -1,3 +1,7 @@
+body {
+    background: #ededed;
+}
+
 h1 {
     font-family: 'Overpass';
     font-weight: 400;
@@ -83,26 +87,26 @@ h4 {
     border-width: 1px;
 }
 
-.btn-default:hover {
+.btn:hover {
     color: #0b3d91;
     background-color: #ededed;
     border-color: #0b3d91 !important;
     border-bottom-width: 3px;
 }
 
-.btn-default:active, .btn-default:active:focus {
+.btn:active, .btn:active:focus {
     border-top-width: 3px;
     border-bottom-width: 1px;
     color: #0b3d91;
     background-color: #ededed;
 }
 
-.btn-default:focus {
+.btn:focus {
     color: #ededed;
     background: #0b3d91;
 }
 
-.btn-default:disabled {
+.btn:disabled {
     color: #a1a5ac;
     border-color: #a1a5ac;
     background: #ededed;
@@ -133,6 +137,10 @@ h4 {
     position: relative;
 }
 
+.btn-group .btn:nth-child(n+2):hover {
+    border-left: 1px solid #0b3d91;
+}
+
 .btn-group .btn:nth-child(n+2)::before {
     content: '';
     position: absolute;
@@ -142,6 +150,10 @@ h4 {
     background-color: #a1a5ac;
     width: 1px;
 }
+
+.btn-group .btn:nth-child(n+2):hover::before {
+    content: none;
+} 
 
 .btn-group .btn-icon {
     padding: 9px 23px;
@@ -273,33 +285,6 @@ a.list-group-item:first-child, .list-group-item:last-child {
     border-bottom-width: 3px;
 }
 
-.breadcrumb {
-    border-radius: 0;
-}
-
-.breadcrumb li {
-    background: #ededed;
-    transform: skewX(-45deg);
-}
-
-.breadcrumb li > * {
-    transform: skewX(45deg);
-}
-
-.breadcrumb-arrow {
-    background-color: #a1a5ac;
-}
-
-.breadcrumb-arrow li a::after, 
-.breadcrumb-arrow li a::before {
-    content: none;
-}
-
-.breadcrumb-arrow li a {
-    background: none;
-    border: none;
-}
-
 .progress {
     border-radius: 0;
     background-color: #a1a5ac;
@@ -331,16 +316,18 @@ a.list-group-item:first-child, .list-group-item:last-child {
 
 .nav-tabs>li {
     border: none;
+    color: #0b3d91;
 }
 
-.nav-tabs.nav-justified>.active>a {
+.nav-tabs>li>a:hover {
+    border: 1px solid currentColor;
+    border-bottom: 3px solid currentColor;
+}
+
+.nav-tabs>li.active>a, 
+.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a:hover{
     font-weight: 700;
-    color: #202020;
-    border-bottom: 3px solid #202020;
-}
-
-.nav-tabs.nav-justified>.active>a, 
-.nav-tabs.nav-justified>.active>a:focus, 
-.nav-tabs.nav-justified>.active>a:hover{
-    border-bottom: 3px solid #202020;
+    background-color: #0b3d91 !important;
+    color: #ededed;
 }
